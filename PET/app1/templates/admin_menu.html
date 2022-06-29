@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Inner Page - Remember Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'static/img_h/favicon.png' %}" rel="icon">
+  <link href="{% static 'static/img_h/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'vendor_h/aos/aos.css" rel="stylesheet">
+  <link href="{% static 'vendor_h/bootstrap/css/.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor_h/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor_h/boxicons/css/b.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor_h/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'vendor_h/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css_h/mm.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Remember - v4.7.0
+  * Template URL: https://bootstrapmade.com/remember-free-multipurpose-bootstrap-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center" style="margin-left:30px;"><a href="mailto:contact@example.com">contact@example.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4" style="margin-left:100px;"><span>+1 5589 55488 55</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center" style="margin-left:1200px;">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between" style="height:100px;">
+
+      <div class="logo" style="height:2px;">
+        <h1 class="text-light"><a href="index.html">Remember</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav id="navbar" class="navbar" style="margin-top:30px;float: right;" >
+        <ul>
+          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Reports</a></li>
+          <li class="dropdown"><a href="#"><span>Scheduler Manage</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Add Scheduler</a></li>
+              <li><a href="#">Remove Scheduler</a></li>
+            </ul>
+          </li>
+        
+          <li class="dropdown"><a href="#"><span>Homestay Manage</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/add_homestay">Add Homestay</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="/homestay_table">Remove Homestay</a></li>
+              <li><a href="/justviewhomestaybooking">View booking</a></li>
+              <li><a href="/view_hom_table">View homestays</a></li>
+              
+            </ul>
+          </li>
+        
+          <li class="dropdown"><a href="#"><span>Resort Manage</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/add_resort">Add Resort</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="/resort_table">Remove Resort</a></li>
+              <li><a href="/justviewresortbooking">View booking</a></li>
+              <li><a href="/view_res_table">View resorts</a></li>
+              
+            </ul>
+          </li>
+        
+          
+          <li class="dropdown"><a href="#"><span>Activity Manage</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/add_activity">Add Activity</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="/activity_table">Remove Activity</a></li>
+              <li><a href="/viewactivitybooking1/">View booking</a></li>
+              <li><a href="/view_act_table/">View activities</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'vendor_h/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'vendor_h/aos/aos.js"></script>
+  <script src="{% static 'vendor_h/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'vendor_h/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'vendor_h/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'vendor_h/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'vendor_h/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'js_h/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+	{% load static %}
+  	<title>Table 07</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="{% static 'css_act/style.css' %}">
+
+	</head>
+    
+	<body>
+	
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">ACTIVITY TABLE</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-bordered table-dark table-hover">
+						  <thead>
+						    <tr>
+						      <th>Activity id</th>
+						      <th>Activity name</th>
+						      <th>Description</th>
+							  <th>Photo</th>
+							  <th>Rate</th>
+							  <th>Status</th>
+							  <!-- <th>Remove activity</th> -->
+						    </tr>
+						  </thead>
+						  <tbody>
+							{% for ct in data1 %}
+						    <tr>
+								<td>{{ct.activity_id}}</td>
+								<td>{{ct.activity_name}}</td>
+								<td>{{ct.description}}</td>
+								<td><img src="{{ct.photo}}" width="100" height="100"></td>
+								<td>{{ct.rate}}</td>
+								<td>{{ct.status}}</td>
+								<!-- <td><a href="/remove_activity/{{ct.activity_id}}">Remove activity</a></td> -->
+								
+						    </tr>
+							{% endfor %} 
+						    
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="{% static 'js_act/jquery.min.js' %}"></script>
+  <script src="{% static 'js_act/popper.js' %}"></script>
+  <script src="{% static 'js_act/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js_act/main.js' %}"></script>
+
+	</body>
+</html>
+
