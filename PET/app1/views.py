@@ -1,7 +1,12 @@
+from datetime import datetime
 from turtle import home
+import datetime
+from datetime import date
 from django.shortcuts import redirect, render,HttpResponse
 from requests import request
 from django.core.files.storage import FileSystemStorage
+from app1.models import resortreview
+from app1.models import activityreview
 from app1.models import activitybooking1
 from app1.models import resortbooking1
 from app1.models import homestaybooking1
@@ -89,9 +94,10 @@ def addresortaction(request):
         uploaded_file_url = fs.url(filename)
         data.photo=uploaded_file_url
         data.location=request.POST.get('loc')
-        data.contact=request.POST.get('contact')
+        data.contact=request.POST.get('number')
         data.status=request.POST.get('status')
         data.owner=request.POST.get('own')
+        data.rate=request.POST.get('rate')
         data.save()
 
         data1=idgen1.objects.get(id=1)
@@ -99,7 +105,7 @@ def addresortaction(request):
         data1.save()
         data2=login()
         data2.username=request.POST.get('id')
-        data2.password=request.POST.get('contact')
+        data2.password=request.POST.get('number')
         data2.category="resort"
         data2.save()
 
@@ -111,6 +117,9 @@ def resort_table(request):
 def removeresort(request,id1):
         data=resort.objects.get(resort_id=id1)
         data.delete()
+        data=login.objects.get(username=id1)
+        data.delete()
+        
         return redirect("/resort_table/") 
 def viewrestable(request):
        data=resort.objects.all()
@@ -137,6 +146,7 @@ def addhomestayaction(request):
         data.food=request.POST.get('food')
         data.owner=request.POST.get('own')
         data.contact=request.POST.get('contact')
+        data.rate=request.POST.get('rate')
         data.status=request.POST.get('status')
         data.save()
 
@@ -156,6 +166,8 @@ def homestay_table(request):
        return render(request,"hom_table.html",{'data1':data})  
 def removehomestay(request,id1):
         data=homestay.objects.get(homestay_id=id1)
+        data.delete()
+        data=login.objects.get(username=id1)
         data.delete()
         return redirect("/homestay_table/")  
 def viewhomtable(request):
@@ -223,6 +235,12 @@ def editresort2(request,id1):
         data.status=request.POST.get('status')
         data.owner=request.POST.get('own')
         data.save()
+
+        data2=login.objects.get(username=id1)
+        data2.username=request.POST.get('id')
+        data2.password=request.POST.get('contact')
+        data2.category="resort"
+        data2.save()
     else:
         data=resort.objects.get(resort_id=id1)
         data.resort_name=request.POST.get('name')
@@ -237,6 +255,12 @@ def editresort2(request,id1):
         uploaded_file_url = fs.url(filename)
         data.photo=uploaded_file_url    
         data.save()
+
+        data2=login.objects.get(username=id1)
+        data2.username=request.POST.get('id')
+        data2.password=request.POST.get('contact')
+        data2.category="resort"
+        data2.save()
     return redirect('/editresort')    
 def edithomestay(request):
     r=request.session['homestay_id']
@@ -480,8 +504,105 @@ def justviewresortbooking(request):
     return render(request,"justviewresortbooking.html",{'data':data})
 
 def actresponse(request):
-    return render(request,"act_response.html")    
+    data=activitybooking1.objects.filter(traveller_id=request.session['traveller_id'])
+    return render(request,"act_response.html",{'data':data})    
 def resresponse(request):
-    return render(request,"res_response.html")   
+    data=resortbooking1.objects.filter(traveller_id=request.session['traveller_id'])
+    return render(request,"res_response.html",{'data':data})     
 def homresponse(request):
-    return render(request,"hom_response.html")                 
+    data=homestaybooking1.objects.filter(traveller_id=request.session['traveller_id'])
+    return render(request,"hom_response.html",{'data':data})   
+
+def travellerlogout(request):
+    del request.session['traveller_id']
+    return render(request,"login1.html") 
+
+def trav_homestay_logout(request):
+    del request.session['traveller_id']
+    return render(request,"login1.html") 
+def trav_resort_logout(request):
+    del request.session['traveller_id']
+    return render(request,"login1.html") 
+def trav_activity_logout(request):
+    del request.session['traveller_id']
+    return render(request,"login1.html") 
+
+def homestay_menu_logout(request):
+    del request.session['homestay_id']
+    return render(request,"login1.html")     
+
+def act_review(request,id1):
+    print("dddddddddddddddddddddddddddddddddddddddd")
+    print(id1)
+    data1 = idgen1.objects.get(id=1)
+    id = data1.act_review_id
+    id = int(id+1)
+    act_review_id = "ACTRW_00" + str(id)
+    request.session['act_review_id'] = id
+    request.session['activity_id'] = id1
+    request.session['review_id'] =  act_review_id 
+    return render(request,"act_review.html",{'data':act_review_id})  
+def act_reviewaction(request):
+   if request.method=='POST':
+        data=activityreview()
+        data.act_review_id=request.session['review_id']
+        data.review=request.POST.get('review')
+        data.traveller_id_id=request.session['traveller_id']
+        data.activity_id_id=request.session['activity_id']
+        print("ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd")
+        print(request.session['activity_id'])
+        data.review_date=datetime.datetime.now().strftime("%y-%m-%d")
+        
+        data.save()
+        data1=idgen1.objects.get(id=1)
+        data1.act_review_id=request.session['act_review_id']
+        data1.save()
+        id = data1.act_review_id
+        id = int(id+1)
+        act_review_id = "ACTRW_00" + str(id)
+        request.session['act_review_id'] = id
+        request.session['review_id'] =  act_review_id 
+        data3=activityreview.objects.all()
+        return render(request,"act_review.html",{'data':act_review_id,'data':data3})                             
+                           
+def res_review(request,id1):
+    
+    data1 = idgen1.objects.get(id=1)
+    id = data1.res_review_id
+    id = int(id+1)
+    res_review_id = "RESRW_00" + str(id)
+    request.session['res_review_id'] = id
+    request.session['resort_id'] = id1
+    request.session['review_id'] =  res_review_id 
+    return render(request,"res_review.html",{'data':res_review_id})                             
+
+def hom_review(request,id):
+    return render(request,"hom_review.html") 
+def adminlogout(request):
+    del request.session['admin_id'] 
+    return render(request,"login1.html")    
+def gotohom(request):
+    return render(request,"admin_menu.html")                                
+def contact(request):
+    return render(request,"contact.html")                                                                                  
+def res_reviewaction(request):
+   if request.method=='POST':
+        data=resortreview()
+        data.res_review_id=request.session['review_id']
+        data.review=request.POST.get('review')
+        data.traveller_id_id=request.session['traveller_id']
+        data.resort_id_id=request.session['resort_id']
+        
+        data.review_date=datetime.datetime.now().strftime("%y-%m-%d")
+        
+        data.save()
+        data1=idgen1.objects.get(id=1)
+        data1.res_review_id=request.session['res_review_id']
+        data1.save()
+        id = data1.res_review_id
+        id = int(id+1)
+        res_review_id = "RESRW_00" + str(id)
+        request.session['res_review_id'] = id
+        request.session['review_id'] =  res_review_id 
+        data3=resortreview.objects.all()
+        return render(request,"res_review.html",{'data':res_review_id,'dataa':data3})                          

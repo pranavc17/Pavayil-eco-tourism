@@ -23,9 +23,12 @@ class idgen1(models.Model):
     homestaybooking_id=models.IntegerField()
     resortbooking_id=models.IntegerField()
     activitybooking_id=models.IntegerField()
+    act_review_id=models.IntegerField()
+    res_review_id=models.IntegerField()
+    hom_review_id=models.IntegerField()
 
    
-   
+
      
     class Meta:
        db_table = "idgen1" 
@@ -37,7 +40,8 @@ class resort(models.Model):
     photo= models.ImageField()
     description = models.CharField(max_length=90)
     owner=models.CharField(max_length=90)
-    contact = models.IntegerField()
+    contact = models.CharField(max_length=90)
+    rate = models.CharField(max_length=90)
     status = models.CharField(max_length=90)
     
     class Meta:
@@ -50,7 +54,8 @@ class homestay(models.Model):
     description = models.CharField(max_length=90)
     food=models.CharField(max_length=90)
     owner=models.CharField(max_length=90)
-    contact = models.IntegerField()
+    contact =models.CharField(max_length=90)
+    rate = models.CharField(max_length=90)
     status = models.CharField(max_length=90)
     
     class Meta:
@@ -114,7 +119,38 @@ class activitybooking1(models.Model):
     
     
     class Meta:
-        db_table = "activitybooking1"                        
+        db_table = "activitybooking1"  
+
+class activityreview(models.Model):
+    act_review_id = models.CharField(max_length=90,primary_key=True)
+    review = models.CharField(max_length=150)
+    review_date = models.CharField(max_length=90)
+    traveller_id= models.ForeignKey(traveller,on_delete=models.CASCADE)
+    activity_id= models.ForeignKey(activity,on_delete=models.CASCADE)
+   
+    
+    class Meta:
+        db_table = "activityreview" 
+class resortreview(models.Model):
+    res_review_id = models.CharField(max_length=90,primary_key=True)
+    review = models.CharField(max_length=150)
+    review_date = models.CharField(max_length=90)
+    traveller_id= models.ForeignKey(traveller,on_delete=models.CASCADE)
+    resort_id= models.ForeignKey(resort,on_delete=models.CASCADE)
+   
+    
+    class Meta:
+        db_table = "resortreview"
+class homestayreview(models.Model):
+    hom_review_id = models.CharField(max_length=90,primary_key=True)
+    review = models.CharField(max_length=150)
+    review_date = models.CharField(max_length=90)
+    traveller_id= models.ForeignKey(traveller,on_delete=models.CASCADE)
+    homestay_id= models.ForeignKey(homestay,on_delete=models.CASCADE)
+   
+    
+    class Meta:
+        db_table = "homestayreview"                                           
                                                 
                       
 

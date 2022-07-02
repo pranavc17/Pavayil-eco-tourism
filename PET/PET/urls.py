@@ -81,6 +81,22 @@ urlpatterns = [
     path('activityresponse/',views.actresponse),
     path('resortresponse/',views.resresponse),
     path('homestayresponse/',views.homresponse),
+    path('travellerlogout/',views.travellerlogout),
+    path('trav_homestay_logout/',views.trav_homestay_logout),
+    path('trav_resort_logout/',views.trav_resort_logout),
+    path('trav_activity_logout/',views.trav_activity_logout),
+    path('homestay_menu_logout/',views.homestay_menu_logout),
+    path('act_review/<str:id1>',views.act_review),
+    path('res_review/<str:id1>',views.res_review),
+    path('hom_review/<str:id>',views.hom_review),
+    path('act_reviewaction/',views.act_reviewaction),
+    path('adminlogout/',views.adminlogout),
+    path('gotohom/',views.gotohom),
+    path('contact/', views.contact),
+    path('res_reviewaction/',views.res_reviewaction),
+
+
+    
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

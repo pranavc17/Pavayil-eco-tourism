@@ -24,9 +24,140 @@
 
     <!-- Main CSS-->
     <link href="{% static 'css-reg/main.css' %}" rel="stylesheet" media="all">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+    <title>Inner Page - Remember Bootstrap Template</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+  
+    <!-- Favicons -->
+    <link href="{% static 'static/img_h/favicon.png' %}" rel="icon">
+    <link href="{% static 'static/img_h/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor_h/aos/aos.css" rel="stylesheet">
+    <link href="{% static 'vendor_h/bootstrap/css/.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor_h/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor_h/boxicons/css/b.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor_h/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor_h/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+  
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css_h/mm.css' %}" rel="stylesheet">
+  
 </head>
-{% include "admin_menu.html" %}
+
 <body>
+    <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope d-flex align-items-center" style="margin-left:30px;"><a href="mailto:contact@example.com">pavayilecotourism@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4" style="margin-left:100px;"><span>+919061505733</span></i>
+      </div>
+      <div class="social-links d-none d-md-flex align-items-center" style="margin-left:1200px;">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+  
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-between" style="height:100px;">
+
+      <div class="logo" style="height:2px;">
+        <h1 class="text-light"><a href="index.html">Pavayil Eco Tourism</a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+<!-- 
+      <nav id="navbar" class="navbar" style="margin-top:30px;float: right;" >
+        <ul>
+          <li><a class="nav-link scrollto " href="/gotohom">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">Reports</a></li>
+          <li class="dropdown"><a href="#"><span>Scheduler Manage</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Add Scheduler</a></li>
+              <li><a href="#">Remove Scheduler</a></li>
+            </ul>
+          </li>
+        
+          <li class="dropdown"><a href="#"><span>Homestay Manage</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/add_homestay">Add Homestay</a></li> -->
+              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li> -->
+              <!-- <li><a href="/homestay_table">Remove Homestay</a></li>
+              <li><a href="/justviewhomestaybooking">View booking</a></li>
+              <li><a href="/view_hom_table">View homestays</a></li>
+              
+            </ul>
+          </li>
+        
+          <li class="dropdown"><a href="#"><span>Resort Manage</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/add_resort">Add Resort</a></li> -->
+              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li>
+              <li><a href="/resort_table">Remove Resort</a></li>
+              <li><a href="/justviewresortbooking">View booking</a></li>
+              <li><a href="/view_res_table">View resorts</a></li>
+              
+            </ul>
+          </li>
+        
+          
+          <li class="dropdown"><a href="#"><span>Activity Manage</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="/add_activity">Add Activity</a></li> -->
+              <!-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="#">Deep Drop Down 1</a></li>
+                  <li><a href="#">Deep Drop Down 2</a></li>
+                  <li><a href="#">Deep Drop Down 3</a></li>
+                  <li><a href="#">Deep Drop Down 4</a></li>
+                  <li><a href="#">Deep Drop Down 5</a></li>
+                </ul>
+              </li> -->
+              <!-- <li><a href="/activity_table">Remove Activity</a></li>
+              <li><a href="/viewactivitybooking1/">View booking</a></li>
+              <li><a href="/view_act_table/">View activities</a></li> -->
+            </ul>
+          </li>
+          <!-- <li><a class="nav-link scrollto" href="/contact">Contact us</a></li> -->
+          <!-- <li><a class="nav-link scrollto" href="/adminlogout">Log out</a></li> -->
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+<><ul><li><li><a class="nav-link scrollto" href="/contact">Contact us</a></li></li></ul></nav>
+    </div>
+  </header><!-- End Header -->
+
+
+
+
+
+
     <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
@@ -36,6 +167,54 @@
                 <div class="card-body">
                     <form action="/addtravelleraction/" method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
+                        <script>
+                            function btnfn(event) {
+                                // var DOB = document.getElementById("dob").value;
+                                // var today = new Date();
+                                // var parts = DOB.split("/");
+                                // var thisYear = today.getFullYear();
+                                // var thisMonth = today.getMonth() + 1;
+                                // var thisDay = today.getDate();
+                        
+                                // var givenYear = parts[2];
+                                // var givenMonth = parts[1];
+                                // var givenDay = parts[0];
+                        
+                                // var todayDate = thisDay + "/" + thisMonth + "/" + thisYear;
+                        
+                                // var day1 = new Date(today);
+                                // var day2 = new Date(givenYear + "-" + givenMonth + "-" + givenDay);
+                                // var difference = day1 - day2;
+                        
+                                // var age = today.getFullYear() - givenYear;
+                        
+                        
+                                // if (difference < 0) {
+                                //     document.getElementById("doberror").innerHTML = "Date of birth not valid";
+                                //     event.preventDefault();
+                                // }else{
+                                //     document.getElementById("doberror").innerHTML = "";
+                                // }
+                                // if (age < 19 || age > 80) {
+                                //     document.getElementById("doberror1").innerHTML = "Date of birth not valid";
+                                //     event.preventDefault();
+                                // }else{
+                                //     document.getElementById("doberror1").innerHTML = "";
+                                // }
+                        
+                        
+                                var phone=document.getElementById("phn").value;
+                                var phoneno =/^[6-9]\d{9}$/;
+                        
+                                if (phone.match(phoneno) == null) {
+                                    document.getElementById("phnerr").innerHTML="Phone number Error";
+                                    event.preventDefault();
+                        
+                                }else{
+                                    document.getElementById("phnerr").innerHTML = "";
+                                }
+                            }
+                        </script>q
                         <div class="form-row m-b-55">
                             <div class="name">Travller id</div>
                             <div class="value">
@@ -52,7 +231,7 @@
                                 <div class="row row-refine">
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="first_name">
+                                            <input class="input--style-5" type="text" name="first_name" required>
                                             <label class="label--desc">First name</label>
                                         </div>
                                     </div>
@@ -69,7 +248,7 @@
                             <div class="name">country</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="country">
+                                    <input class="input--style-5" type="text" name="country" required>
                                 </div>
                             </div>
                         </div>
@@ -77,23 +256,23 @@
                             <div class="name">state</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="state">
+                                    <input class="input--style-5" type="text" name="state" required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">district/city</div>
+                            <div class="name">District/city</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="district">
+                                    <input class="input--style-5" type="text" name="district"required>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">id proof</div>
+                            <div class="name">Id proof</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input multiple class="input--style-5" type="file" name="photo">
+                                    <input multiple class="input--style-5" type="file" name="photo" required>
                                 </div>
                             </div>
                         </div>
@@ -106,15 +285,15 @@
                             </div>
                         </div> -->
                         <div class="form-row">
-                            <div class="name">phone</div>
+                            <div class="name">Phone</div>
                             <div class="value">
-                                <div class="input-group">
-                                    <input class="input--style-5" type="text" name="contact">
+                                <div class="input-group"><p style="color: red; font-style: italic;" id="phnerr"></p>
+                                    <input class="input--style-5" type="text" name="contact" required id="phn">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">email</div>
+                            <div class="name">Email</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="text" name="email">
@@ -159,7 +338,7 @@
                             </div>
                         </div> -->
                         <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                            <button class="btn btn--radius-2 btn--red" type="submit" onclick="btnfn(event)">Register</button>
                         </div>
                     </form>
                 </div>
@@ -173,6 +352,16 @@
     <script src="{% static 'vendor-reg/select2/select2.min.js' %}"></script>
     <script src="{% static 'vendor-reg/datepicker/moment.min.js' %}"></script>
     <script src="{% static 'vendor-reg/datepicker/daterangepicker.js' %}"></script>
+    <script src="{% static 'vendor_h/purecounter/purecounter.js' %}"></script>
+    <script src="{% static 'vendor_h/aos/aos.js"></script>
+    <script src="{% static 'vendor_h/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'vendor_h/glightbox/js/glightbox.min.js' %}"></script>
+    <script src="{% static 'vendor_h/isotope-layout/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'vendor_h/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'vendor_h/php-email-form/validate.js' %}"></script>
+  
+    <!-- Template Main JS File -->
+    <script src="{% static 'js_h/main.js' %}"></script>
 
     <!-- Main JS-->
     <script src="{% static 'js-reg/global.js' %}"></script>
